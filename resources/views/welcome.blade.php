@@ -21,37 +21,36 @@ use Illuminate\Support\Facades\DB;
     <body class="antialiased">
      <a href="/">HOME</a>
      <br><hr>
-     <a href="/crear">CREAR PROYECTO</a>
+     <a href="/crear">NUEVO PROYECTO</a>
      <br>
      <?php
     $proyectos = DB::select("SELECT * FROM Proyectos");
 ?>
 
-    <a href="/proyectos/crear"> Crear nuevo proyecto </a>
-    <table border="1">
-        <tr bgcolor="#DDDDDD">
-        <th>id</th>
-        <th>NombreProyecto</th>
-        <th>fuenteFondos</th>
-        <th>MontoPlanificado</th>
-        <th>MontoPatrocinado</th>
-        <th>MontoFondosPropios</th>
-        <th>Acción</th>
+    <!--<a href="/proyectos/crear"> Crear nuevo proyecto </a>-->
+    <table border="2" whith="30%">
+        <tr bgcolor="#D2B4DE">
+        <th><strong> No  </strong></th>
+        <th><strong> Nombre Proyecto </strong></th>
+        <th><strong> Fuente Fondos </strong></th>
+        <th><strong> Monto Planificado  </strong></th>
+        <th><strong> Monto Patrocinado  </strong></th>
+        <th><strong> Monto Fondos Propios  </strong></th>
+        <th><strong> Actualizar  </strong></th>
+        <th><strong> Eliminar  </strong></th>
         </tr>
         <?php 
             foreach( $proyectos as $res){
                 echo "<tr>";
                 echo "<td>".$res->id."</td>";
-                echo "<td>".$res->NombreProyecto."</td>";
-                echo "<td>".$res->fuenteFondos."</td>";
-                echo "<td>".$res->MontoPlanificado."</td>";
-                echo "<td>".$res->MontoPatrocinado."</td>";                
-                echo "<td>".$res->MontoFondosPropios."</td>";
-                echo "<td>".
-                    "<a href='/proyectos/actualizar/$res->id'> Actualizar </a><br>".
-                    "<a href='/proyectos/eliminar/$res->id'> Eliminar </a><br>".
-                    "<a href='/proyectos/informepdf/$res->id'> Informe PDF </a>".
-                    "</td>";
+                echo "<td>". $res->NombreProyecto ."</td>";
+                echo "<td>". $res->fuenteFondos ."</td>";
+                echo "<td>" .$res->MontoPlanificado ."</td>";
+                echo "<td>". $res->MontoPatrocinado."</td>";                
+                echo "<td>". $res->MontoFondosPropios."</td>";
+                echo "<td><a href='/proyectos/actualizar/$res->id'> Actualizar </a></td>".
+                     "<td><a href='/proyectos/eliminar/$res->id'> Eliminar </a></td>".
+                     "</td>";
                 echo "</tr>";
             }
         ?>

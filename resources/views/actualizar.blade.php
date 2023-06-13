@@ -15,20 +15,20 @@
         <h3>Actualizar</h3>
         <form method="get" action="{{ route('proyectos.formactualizardata',['id'=>$id]) }}">
         <table>
-        <td><label>NombreProyecto</label></td>
-        <td><input type="text" name="NombreProyecto" value="{{ $NombreProyecto }}" size="50px" required></td>
+        <td><label><strong>Nombre Proyecto</strong></label></td>
+        <td><input type="text" name="NombreProyecto" value="{{ $NombreProyecto }}" size="25px" required></td>
         <tr>
-        <td><label>fuenteFondos</label></td>
-        <td><input type="area" name="fuenteFondos" value="{{ $fuenteFondos }}" size="50px" required></td>
+        <td><label><strong>Fuente Fondos</strong></label></td>
+        <td><input type="area" name="fuenteFondos" value="{{ $fuenteFondos }}" size="25px" required></td>
         <tr>
-        <td><label>MontoPlanificado</label></td>
-        <td><input type="text" name="MontoPlanificado" value="{{ $MontoPlanificado }}" required></td>
+        <td><label><strong>Monto Planificado</strong></label></td>
+        <td><input type="text" name="MontoPlanificado" value="{{ $MontoPlanificado }}" size="15px" required></td>
         <tr>
-        <td><label>MontoPlanificado</label></td>
-        <td><input type="text" name="MontoPatrocinado" value="{{ $MontoPatrocinado }}" required></td>
+        <td><label><strong>Monto Planificado</strong></label></td>
+        <td><input type="text" name="MontoPatrocinado" value="{{ $MontoPatrocinado }}" size="15px" required></td>
         <tr>
-        <td><label>MontoFondosPropios</label></td>
-        <td><input type="text" name="MontoFondosPropios" value="{{ $MontoFondosPropios }}" required></td>
+        <td><label><strong>Monto Fondos Propios</strong></label></td>
+        <td><input type="text" name="MontoFondosPropios" value="{{ $MontoFondosPropios }}" size="15px" required></td>
         <tr>
         </table>
         <input type="submit">

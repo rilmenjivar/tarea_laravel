@@ -15,12 +15,31 @@
      <a href="/">HOME</a>
      <br><hr>
     <form action ="{{ route('proyectos.formdataguardar') }}" method="GET">
-        NombreProyecto  : <input type="text" name="NombreProyecto" />  <br>    
-        fuenteFondos :     <input type="text" name="fuenteFondos" /><br>
-        MontoPlanificado : <input type="text" name="MontoPlanificado" /><br>
-        MontoPatrocinado : <input type="text" name="MontoPatrocinado" /><br>
-        MontoFondosPropios :  <input type="text" name="MontoFondosPropios" /><br>
-            <input type="submit" />
+        <table>
+            <tr>
+                <td>Nombre Proyecto </td>
+                <td> <input type="text" name="NombreProyecto" /> </td>
+            </tr>
+            <tr>
+                <td>Fuente Fondos</td>
+                <td> <input type="text" name="fuenteFondos" /></td>
+            </tr>
+            <tr>
+                <td>Monto Planificado</td>
+                <td><input type="text" name="MontoPlanificado" /></td>
+            </tr>
+            <tr>
+                <td>Monto Patrocinado</td>
+                <td><input type="text" name="MontoPatrocinado" /></td>
+            </tr>
+            <tr>
+                <td>Monto Fondos Propios</td>
+                <td><input type="text" name="MontoFondosPropios" /></td>
+            </tr>
+      
+           <tr><input type="submit" /></tr>
+        </table>
+
     </form>
 
     </body>

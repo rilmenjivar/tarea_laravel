@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use PDF;
 
 class Controller extends BaseController
 {
@@ -56,26 +57,6 @@ public function eliminar($id) {
     return redirect('/');
 }
 
-public function informepdf($id) {
-    $proyectos = DB::select("SELECT * FROM Proyectos WHERE id = $id");
-    $id = $proyectos[0]->id;
-    $NombreProyecto = $proyectos[0]->NombreProyecto;
-    $fuenteFondos = $proyectos[0]->fuenteFondos;
-    $MontoPlanificado = $proyectos[0]->MontoPlanificado;
-    $MontoPatrocinado = $proyectos[0]->MontoPatrocinado;
-    $MontoFondosPropios = $proyectos[0]->MontoFondosPropios;
-
-    $pdf = PDF::loadView('informepdf', compact(
-        'id', 
-        'NombreProyecto', 
-        'fuenteFondos',
-        'MontoPlanificado', 
-        'MontoPatrocinado', 
-        'MontoFondosPropios' 
-    ));
-    return $pdf->stream('prueba.pdf');
-   
-}
 
 
 }
